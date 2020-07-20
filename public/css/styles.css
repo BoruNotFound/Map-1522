@@ -1,0 +1,246 @@
+/*** General Setting ***/
+* {
+  box-sizing: border-box;
+  transition: ease .3s;
+}
+
+:root {
+  --color_bg: #f0f5f7;
+  --color_char: #3d3d3b;
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: var(--color_bg);
+  font-family: Georgia, 'Times New Roman', "Source Han Serif SC", serif, '宋体';
+}
+
+/* Header styles */
+header{
+width: 100%;
+background: #f8f8f1;
+box-sizing: border-box;
+box-shadow: 0px 0px 6px #bbbbbb;
+padding: 10px;
+}
+header a{
+font-size: 20px;
+margin-top: 5px;
+float: right;
+margin-left: 10px;
+border-bottom: 2px solid #ffe057;
+cursor: pointer;
+}
+
+header .sign-out {
+margin-right: calc(50% - 530px);
+}
+header a:hover{
+background: #ffe057;
+color: black;
+}
+
+.subHeader {
+  margin-top: 30px;
+  text-align: right;
+}
+.innerTitle {
+  margin-top: 20px;
+  margin-right: calc(50% - 550px);
+  text-align: right;
+  font-size: 30px;
+  font-family: "Source Han Serif SC";
+  font-weight: 900;
+}
+
+#t1 {
+  color: var(--color_char);
+  padding: 10px;
+}
+
+#t2 {
+  color: var(--color_char);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#logo1522 {
+  margin-right: calc(50% - 600px);
+  background-color: transparent;
+  width: 350px;
+}
+
+#logo1522.inverted {
+filter: invert(100%);
+}
+
+/*** Theme Switch ***/
+/* The switch - the box around the slider */
+.themeSwitch {
+position: relative;
+margin-left: calc(50% - 600px);
+display: inline-block;
+width: 60px;
+height: 28px;
+border-radius: 25px;
+}
+
+/* Hide default HTML checkbox */
+.themeSwitch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+text-align: center;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ffe057;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 25px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+.slider:before {
+position: absolute;
+height: 20px;
+width: 20px;
+left: 6px;
+bottom: 2.5px;
+background-color: transparent;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+/* Switch behavior */
+.switchBar:checked + .slider {
+background-color: black;
+color: white;
+}
+
+.switchBar:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/*** Footer ***/
+#social {
+display: table-cell;
+font-size: 30px;
+text-align: right;
+float: right;
+margin-right: calc(50% - 500px);
+}
+
+#social a {
+  color: var(--color_char);
+  opacity: 0.3;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  transition: ease .3s;
+}
+
+#social a:hover{
+opacity: 1;
+}
+
+/*** Map Frame ***/
+#mapWindow {
+  margin-top: -90px;
+  width: 100%;
+  height: 600px;
+  border: 0px;
+}
+
+/* My Account Page */
+.myAccountPage {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,0.4);
+z-index: 1;
+display: none;
+}
+
+.myAccountPage.open {
+display: block;
+}
+
+.myAccountPage .modal {
+position: fixed;
+margin-top: 20px;
+left: calc(50% - 150px);
+}
+
+.editForm {
+text-align: left;
+}
+
+.editForm button {
+width: 100%;
+}
+
+.editForm select {
+margin-top: 5px;
+margin-bottom: 5px;
+width: 100%;
+height: 25px;
+}
+
+/* Greeting box */
+.greeting {
+  position: absolute;
+  top: 90px;
+  left: calc(50% - 500px);
+  color: var(--color_char);
+  font-size: 20px;
+  width: 400px;
+}
+
+/* Profile pic */
+.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+#update_profile {
+  font-size: 0.7em;
+  font-weight: lighter;
+  background-color: transparent;
+  width: 90px;
+  padding: 3px;
+  border: 2px solid #ffe057;
+  border-radius: 5px;
+  margin-top: -10px;
+}
+
+.new_profile {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 150px);
+  z-index: 2;
+}
+
+.new_profile.open {
+  display: block;
+}

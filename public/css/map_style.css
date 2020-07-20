@@ -1,0 +1,178 @@
+:root {
+  --selected-fill: #a1bad0;
+  --stroke-color: #3d3d3b;
+  --stroke-w: 0.3;
+  --userBlockBackground: #dff0ff;
+  --userBlockBorder: 0;
+  --userBlockFontColor: #000000;
+  --userBlockBorderColor: #2299a1;
+  --shadowColor: #ebebeb;
+  --populated: #c6d4df;
+}
+
+* {
+  transition: ease .3s;
+}
+
+body {
+  background-color: transparent;
+  font-family: Georgia, 'Times New Roman', "Source Han Serif SC", serif, '宋体';
+}
+
+/* Page structure */
+#map {
+  width: 900px;
+  margin-left: calc(50% - 650px);
+}
+
+#mapUS {
+  margin-top: -60px;
+  width: 900px;
+  margin-left: calc(50% - 650px);
+}
+
+#mapChina {
+  margin-top: -60px;
+  width: 900px;
+  margin-left: calc(50% - 650px);
+}
+
+#linkback {
+  margin-top: 60px;
+  margin-left: calc(50% - 600px);
+}
+
+.nameList {
+  position: fixed;
+  top: 100px;
+  right: calc(50% - 580px);
+
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 25px;
+
+  background-color: var(--userBlockBackground);
+
+  border-color: #ffa31a;
+  border-style: solid;
+  border-width: var(--userBlockBorder);
+  display: none;
+  overflow: auto;
+}
+
+::-webkit-scrollbar
+{
+    width:5px;
+    background-color:transparent;
+}
+
+.detailed {
+  position: fixed;
+  top: 300px;
+  right: calc(50% - 580px);
+
+  width: 280px;
+  height: 200px;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 20px;
+  border-radius: 25px;
+
+  background-color: var(--userBlockBackground);
+
+  border-color: #ffa31a;
+  border-style: solid;
+  border-width: var(--userBlockBorder);
+  
+  display: none;
+}
+
+
+/* Map Color fill */
+.country {
+  fill: transparent;
+  stroke: var(--stroke-color);
+  stroke-width: var(--stroke-w);
+}
+
+.selected_country {
+  fill: var(--selected-fill);
+  stroke-width: 1;
+}
+
+.populated {
+  fill: var(--populated);
+}
+
+/* User List */
+.userBlock {
+  color: var(--userBlockFontColor);
+  box-shadow: 3px 3px 3px 0 var(--shadowColor);
+}
+
+.peopleFiltered {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nameList.message {
+  margin-top: -20px;
+}
+
+.peopleFiltered li {
+  display: inline-block;
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.peopleFiltered li:hover {
+  box-shadow: 0 2px 0 0 var(--userBlockBorderColor);
+}
+
+.fa:hover {
+  cursor: pointer;
+}
+
+/* Specific User Info */
+/* Profile pic */
+.det_avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin-left: -10px;
+}
+
+.det_name {
+  position: relative;
+  left: 80px;
+  top: -60px;
+  font-size: 1.3em;
+  font-weight:1000;
+}
+
+.det_location {
+  position: relative;
+  left: 80px;
+  top: -70px;
+}
+
+.det_bio {
+  margin-left: -10px;
+  position: relative;
+  top: -60px;
+}
+
+#linkback {
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--stroke-color);
+  border-radius: 3px;
+  color: var(--stroke-color);
+  opacity: 0.5;
+}
+
+#linkback:hover {
+  opacity: 1;
+}

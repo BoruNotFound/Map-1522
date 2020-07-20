@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = 'utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Map</title>
+
+<!-- scripts -->
+<!-- D3 -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- TopoJSON -->
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<!-- Icon -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/map_style.css">
+</head>
+
+<body>
+  <button id='linkback'>返回世界地图</button>
+  <div id="mapUS">   
+    <!-- Visualization -->
+    
+  </div>
+
+  <div class="nameList userBlock" id="nameListApp">
+    <p class="message">{{ message }}</p>
+    <ul class="peopleFiltered">
+      <li v-for="user in userList">
+        <i class="fa fa-search" v-on:click="displayUser(user.id)"></i>
+        <span class="userName">{{ user.name }}</span>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="detailed userBlock" id="displayUserApp">
+    <img class="det_avatar"></img>
+    <div class="det_name">{{ name }}</div><br>
+    <div class="det_location">{{ location }}</div><br>
+    <div class="det_bio">{{ bio }}</div>
+  </div>
+
+  <!-- VUE js production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <!-- Firebase -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.15.0/firebase-app.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-functions.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-storage.js"></script>
+  
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <script src="js/us_map.js"></script>
+  <script src="js/theme_switch_map.js"></script>
+</body>
+</html>

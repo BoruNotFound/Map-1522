@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = 'utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1522蹭吃地图</title>
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth_style.css">
+  <!-- Social Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Scripts -->
+<!-- D3 -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- TopoJSON -->
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/jcrop/dist/jcrop.css">
+<script src="https://unpkg.com/jcrop"></script>
+  
+
+</head>
+<body>
+  <!-- auth modals -->
+  <div class="auth open">
+    <div class="modal">
+      <h2>Login</h2>
+      <form class="login">
+        <p>Email</p>
+        <input type="text" name="email" placeholder="Email">
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Password">
+        <button>Login</button>
+        <p class="error"></p>
+      </form>
+      <div>No account? <a class="switch">Register instead</a></div>
+    </div>
+
+    <div class="modal">
+      <h2>Register</h2>
+      <form class="register">
+        <p>Email</p>
+        <input type="text" name="email" placeholder="Email">
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Password">
+        <p>我们班微信群的名字是？</p>
+        <input type="text" name="verification" placeholder="If u don't know, just guess.">
+        <button>Register</button>
+        <p class="error"></p>
+      </form>
+      <div>Got an account? <a class="switch">Login instead</a></div>
+    </div>
+  </div>
+
+  <!-- Main Page -->
+  <!-- Account Info for the first login -->
+  <!-- TODO -->
+
+  <!-- My account page -->
+  <div class="myAccountPage">
+    <div class="modal">
+      <h2>个人信息</h2>
+      <!-- profile pic -->
+      <div>
+        <img class="profile" id="profile_pic" alt="Profile Pic"></img>
+      </div>
+      <button id="update_profile">Change avatar</button>
+      <form class="editForm">
+        <!-- TODO: Change Email/ Password -->
+        <!-- Name and ID -->
+        <label for="acc_name">名字</label>
+        <input type="text" id="acc_name" name="name" placeholder="君の名は">
+        <!-- Biography -->
+        <label for="acc_bio">简介</label>
+        <input type="text" id="acc_bio" name="bio" placeholder="吃吃吃">
+        <!-- Location -->
+        <label for="acc_country">国家</label><br>
+        <select id="acc_country" name="country">
+          <option value="None">...</option>
+        </select><br>
+        <label for="acc_state">省份/州</label><br>
+        <select id="acc_state" name="state">
+          <option value="None">...</option>
+        </select><br>
+        <label for="acc_city">城市</label><br>
+        <input type="text" id="acc_city" name="city" placeholder="City">
+        </select><br>
+        <!-- Buttons -->
+        <button class="saveButton">保存</button>
+        <button class="cancelButton">关闭</button>
+        <p class="message"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="new_profile modal">
+    请上传图片做为新头像 <br>
+    [注意：请上传正方形图片以避免图片被自动压缩] <br>
+    <input type="file" id="new_profile_pic" name="new_profile_pic" accept="image/png, image/jpeg, image/jpg">
+    <button id="save_new_profile">保存</button>
+    <button id="close_new_profile">关闭</button>
+    <p class="message"></p>
+  </div>
+
+  <!-- Nav Bar -->
+  <header>
+    <nav>
+      <label class="themeSwitch">
+        <input type="checkbox" class="switchBar" id="myCheckbox" onchange = "toggleSwitch()" unchecked>
+        <span class="slider round fa fa-sun-o"></span>
+      </label>
+      <a class="sign-out">登出</a>
+      <a class="my-account">个人信息</a>
+    </nav>
+  </header>
+
+  <!-- LOGO, Title -->
+  <div class='container subHeader'>
+    <img id='logo1522' src='image/logo1522.png' alt='logo1522'>
+    <div class='innerTitle'><span id='t1'>幺伍贰贰</span><span id='t2'>蹭吃地图</span></div>
+  </div>
+
+  <!-- Greeting Box -->
+  <div class='container greeting'>
+    
+  </div>
+
+  <!-- Main Body -->
+  <div class='container'>
+    <iframe id='mapWindow' src='world_map.html'>
+    </iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div id="social">
+      <a href="https://www.linkedin.com/in/boru-wang3/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://github.com/BoruW"><i class="fa fa-github" aria-hidden="true"></a></i>
+    </div>
+  </footer>
+
+  
+
+  <!-- Firebase -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.15.0/firebase-app.js"></script>
+
+  <!-- Add SDKs for Firebase products that you want to use -->
+  <script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-functions.js"></script>
+  <script src="/__/firebase/7.15.0/firebase-storage.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <script src="js/auth.js"></script>
+  <script src='js/change_color.js'></script>
+  <script src='js/myAccount.js'></script>
+  <script src="js/greeting.js"></script>
+</body>
+</html>
